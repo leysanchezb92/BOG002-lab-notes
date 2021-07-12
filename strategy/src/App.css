@@ -1,0 +1,41 @@
+body{
+  margin: 0;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #E4F9FB;
+  height: calc(100vh - 40px);
+  font-family: 'Bungee Inline', cursive;
+  font-size: 15px;
+}
+.main .logo p{
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1em;
+  text-align: center;
+  font-weight: bold;
+}
+
+.main .logo{
+  justify-content: center;
+}
+.main img{
+  width: 120px;
+  height: 120px;
+}
+.buttons{
+  display: flex;
+  flex-direction: column;
+}
+.btn-general{
+  height: 40px;
+  width: 70vw;
+  background: #ADE07A;
+  border: none;
+  border-radius: 30px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
