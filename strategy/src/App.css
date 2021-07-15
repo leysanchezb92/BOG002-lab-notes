@@ -9,10 +9,6 @@ body{
   padding: 20px;
   background-color: #E4F9FB;
   height: calc(100vh - 40px);
-  font-family: 'Bungee Inline', cursive;
-  font-size: 15px;
-}
-.main .logo p{
   font-family: 'Rajdhani', sans-serif;
   font-size: 1em;
   text-align: center;
@@ -29,6 +25,7 @@ body{
 .buttons{
   display: flex;
   flex-direction: column;
+  
 }
 .btn-general{
   height: 40px;
@@ -38,4 +35,52 @@ body{
   border-radius: 30px;
   margin-bottom: 10px;
   cursor: pointer;
+  font-size: 15px;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+}
+.btn-general a{
+  text-decoration: none;
+  color: black;
+}
+h1{
+  font-family: 'Bungee Inline', cursive;
+  font-size: 20px;
+  text-align: center;
+}
+/* register page */
+.register{
+  background-color: white;
+}
+form{
+  width: 80%;
+}
+.form_styles{
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+.form_styles label {
+  padding: 5px 0;
+}
+.form_styles input{
+  border: none;
+  border-bottom: 1px solid #353535;
+  width: 100%;
+  outline: none;
+  padding: 0;
+  height: 20px;
+}
+.social button{
+  border: none;
+  background-color: white;
+}
+.social img{
+  width: 40%;
+  height: 40%;
 }
