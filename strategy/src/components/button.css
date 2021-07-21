@@ -1,0 +1,17 @@
+.btn-general{
+    height: 40px;
+    width: 70vw;
+    background: #ADE07A;
+    border: none;
+    border-radius: 30px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+  }
+.btn-general a{
+    text-decoration: none;
+    color: black;
+}

@@ -1,4 +1,4 @@
-import google from './assets/google.svg'
+import google from '../../assets/google.svg'
 // import {Link} from "react-router-dom";
 
 function Login(){

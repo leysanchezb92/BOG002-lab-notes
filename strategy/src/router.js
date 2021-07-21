@@ -4,9 +4,10 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import App from "./App.js";
-import Register from "./Register.js";
-import Login from "./Login.js"
+import App from "./pages/home/App.js";
+import Register from "./pages/register/Register.js";
+import Login from "./pages/login/Login.js"
+import Main from "./pages/main/Main.js"
 
 export default function RouterPaths() {
   return (
@@ -15,6 +16,7 @@ export default function RouterPaths() {
           <Route exact path="/" component={App} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
+          <Route exact path="/main" component={Main} />
         </Switch>
     </Router>
   );

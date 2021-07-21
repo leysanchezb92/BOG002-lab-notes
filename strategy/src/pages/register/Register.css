@@ -1,0 +1,35 @@
+/* register page */
+.register{
+    background-color: white;
+  }
+  form{
+    width: 80%;
+  }
+  .form_styles{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 25px;
+  }
+.form_styles label {
+    padding: 5px 0;
+}
+.form_styles input{
+    border: none;
+    border-bottom: 1px solid #353535;
+    width: 100%;
+    outline: none;
+    padding: 0;
+    height: 20px;
+}
+.social button{
+    border: none;
+    background-color: white;
+}
+.social img{
+    width: 40%;
+    height: 40%;
+}
