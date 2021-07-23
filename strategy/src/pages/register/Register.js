@@ -1,45 +1,43 @@
 import './Register.css';
+import BtnGeneral from '../../components/button';
+import InputForm from '../../components/inputForm';
 import google from '../../assets/google.svg'
 import { useFirebaseApp } from 'reactfire';
+import 'firebase/auth';
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { BtnGoogle } from '../../firebase-config';
 
-
-function Register(props){
+function Register(){
     const firebase = useFirebaseApp()
-    console.log(firebase)
     const [ email,setEmail ] = useState('');
     const [ password, setPassword ] = useState('');
-
-    const submit = ()=>{
-        console.log(email,password)
+    const history = useHistory();
+    
+    const createAccount = async ()=>{
+        await firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then(()=>{
+            
+            history.push(`/main`);
+        })
+        .catch((error)=>console.error(error,'paso algo malo'))
     }
+
+
     return (
         <div className="main register">
             <h1>REGISTER</h1>
             <form>
-                <div className="form_styles">
-                  <label htmlFor="email">Email address</label>
-                  <input type="email" id="email" onChange={(event)=> setEmail(event.target.value)} required/>
-                </div>
-                <div className="form_styles">
-                  <label htmlFor="text">Full name</label>
-                  <input type="text" id="name" required/>
-                </div> 
-                <div className="form_styles">
-                  <label htmlFor="password">Password</label>
-                  <input type="password" id="password" onChange={(event)=> setPassword(event.target.value)} required/>
-                  {/* <div className="input__indicator"></div> */}
-                </div>
+                <InputForm for="email" name="Email Address" type="email" id="email" setStatus={setEmail}/>
+                <InputForm for="text" name="Full name" type="text" id="text"/> 
+                <InputForm for="password" name="Password" type="password" id="password" setStatus={setPassword}/>
             </form>
             <div className="buttons">
-                <button id="create" className="btn-general" onClick={submit} >
-                    Create account
-                {/* <Link to="/register">Register</Link> Register */}
-                </button>
+                <BtnGeneral name="Register" id="register" url="/main" onClick={createAccount}/>
             </div>
             <div className="social">
                 <p>Or register with:</p>
-                <button><img src={google} alt="logo google"/></button>
+                <button onClick={BtnGoogle}><img src={google} alt="logo google"/></button>
             </div>
         </div>
     );

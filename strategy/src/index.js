@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import RouterPaths from './router';
 import reportWebVitals from './reportWebVitals';
-import firebaseConfig from './firebase-config';
+import { firebaseObj as firebaseConfig } from './firebase-config';
 import { FirebaseAppProvider } from 'reactfire';
 
 ReactDOM.render((

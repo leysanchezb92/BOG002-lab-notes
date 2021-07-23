@@ -1,4 +1,5 @@
 import google from '../../assets/google.svg'
+import InputForm from '../../components/inputForm';
 // import {Link} from "react-router-dom";
 
 function Login(){
@@ -7,15 +8,8 @@ function Login(){
         <div className="main register">
             <h1>LOGIN</h1>
             <form>
-            <div className="form_styles">
-                  <label htmlFor="email">Email address</label>
-                  <input type="email" id="email" required/>
-                </div>
-                <div className="form_styles">
-                  <label htmlFor="password">Password</label>
-                  <input type="password" id="password" required/>
-                  <div className="input__indicator"></div>
-                </div>
+                <InputForm for="email" name="Email Address" type="email" id="emailLog"/>
+                <InputForm for="password" name="Password" type="password" id="passwordLog"/>
             </form>
             <div className="buttons">
                 <button id="create" className="btn-general">

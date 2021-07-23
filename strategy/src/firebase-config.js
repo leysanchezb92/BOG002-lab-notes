@@ -1,3 +1,5 @@
+import firebaseApp from "firebase/app";
+
 const firebaseObj= {
     apiKey: "AIzaSyDE_gZPYiz9Im2w4mxpAybcFe1IC-y5P-g",
     authDomain: "react-strategy-ea491.firebaseapp.com",
@@ -8,4 +10,15 @@ const firebaseObj= {
     measurementId: "G-LYT76W1CQL"
 };
 
-export default firebaseObj
+const BtnGoogle = async() => {
+    const provider = new firebaseApp.auth.GoogleAuthProvider();
+    console.log(provider)
+    await firebaseApp.auth().signInWithPopup(provider)
+    .then(result => { 
+        console.log(result.user.email) 
+    })
+    .catch(error => console.error(error.message))
+}
+export { firebaseObj,BtnGoogle }
+
+
