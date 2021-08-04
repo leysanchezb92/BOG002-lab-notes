@@ -12,13 +12,11 @@ const firebaseObj= {
 
 const BtnGoogle = async() => {
     const provider = new firebaseApp.auth.GoogleAuthProvider();
-    console.log(provider)
-    await firebaseApp.auth().signInWithPopup(provider)
-    .then(result => { 
-        console.log(result.user.email) 
-    })
-    .catch(error => console.error(error.message))
+    return await firebaseApp.auth().signInWithPopup(provider)
 }
-export { firebaseObj,BtnGoogle }
+const Logout = async()=>{
+    return firebaseApp.auth().signOut()
+}
+export { firebaseObj,BtnGoogle,Logout }
 
 

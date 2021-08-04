@@ -5,7 +5,7 @@ function BtnGeneral(props){
   if(props.onClick){
     return (
       <button id={props.id} className="btn-general" onClick={props.onClick}>
-              <Link to={props.url}>{props.name}</Link> 
+        <Link to={props.url}>{props.name}</Link> 
       </button>
     )
   }

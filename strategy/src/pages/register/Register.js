@@ -1,3 +1,4 @@
+import React from 'react';
 import './Register.css';
 import BtnGeneral from '../../components/button';
 import InputForm from '../../components/inputForm';
@@ -14,10 +15,19 @@ function Register(){
     const [ password, setPassword ] = useState('');
     const history = useHistory();
     
+    function buttonGoogle(){
+        BtnGoogle()
+        .then(result => { 
+            console.log(result.user.email) 
+            history.push(`/main`);
+        })
+        .catch(error => console.error(error.message))
+    }
+
+    
     const createAccount = async ()=>{
         await firebase.auth().createUserWithEmailAndPassword(email, password)
         .then(()=>{
-            
             history.push(`/main`);
         })
         .catch((error)=>console.error(error,'paso algo malo'))
@@ -37,7 +47,7 @@ function Register(){
             </div>
             <div className="social">
                 <p>Or register with:</p>
-                <button onClick={BtnGoogle}><img src={google} alt="logo google"/></button>
+                <button onClick={buttonGoogle}><img src={google} alt="logo google"/></button>
             </div>
         </div>
     );

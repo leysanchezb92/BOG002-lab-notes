@@ -9,7 +9,7 @@ ReactDOM.render((
   <FirebaseAppProvider firebaseConfig={firebaseConfig}>
     <React.StrictMode>
       <RouterPaths />
-    </React.StrictMode>,
+    </React.StrictMode>
   </FirebaseAppProvider>
   ),document.getElementById('root')
 );
