@@ -25,12 +25,19 @@ body{
     height: 80%;
     width: 80%;
     margin: 10px auto;
+    overflow: scroll;
 }
 .cardNotes{
-    background-color: red;
-    height: 180px;
+    background-color: steelblue;
+    height: 195px;
     padding: 10px;
     border-radius: 10px;
+    margin-bottom: 5px;
+}
+.inputNotes{
+    border-radius: 5px;
+    border-style: none;
+    margin-bottom: 2px;
 }
 .menuCard{
     padding: 2px;

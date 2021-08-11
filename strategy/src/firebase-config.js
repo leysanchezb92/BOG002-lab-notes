@@ -1,4 +1,5 @@
 import firebaseApp from "firebase/app";
+import 'firebase/firestore';
 
 const firebaseObj= {
     apiKey: "AIzaSyDE_gZPYiz9Im2w4mxpAybcFe1IC-y5P-g",
@@ -10,6 +11,8 @@ const firebaseObj= {
     measurementId: "G-LYT76W1CQL"
 };
 
+firebaseApp.initializeApp(firebaseObj);
+
 const BtnGoogle = async() => {
     const provider = new firebaseApp.auth.GoogleAuthProvider();
     return await firebaseApp.auth().signInWithPopup(provider)
@@ -17,6 +20,10 @@ const BtnGoogle = async() => {
 const Logout = async()=>{
     return firebaseApp.auth().signOut()
 }
-export { firebaseObj,BtnGoogle,Logout }
+const fireDB = firebaseApp.firestore();
+const addNoteFb= async (objNote)=>{
+    return await fireDB.collection('notes').doc().set(objNote)
+}
+export { firebaseObj, BtnGoogle, Logout, addNoteFb, fireDB }
 
 
